@@ -1,0 +1,17 @@
+document.getElementById('zipForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const zipCode = document.getElementById('zipCode').value;
+    fetch(`http://localhost:3000/predict?zip=${zipCode}`)
+        .then(response => response.json())
+        .then(data => {
+            const resultDiv = document.getElementById('result');
+            if (data.prediction === 'snow_day') {
+                resultDiv.textContent = 'Yes, there will be a snow day tomorrow!';
+            } else {
+                resultDiv.textContent = 'No, there will not be a snow day tomorrow.';
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+});
