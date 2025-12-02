@@ -1,0 +1,19 @@
+{
+  "22153": {
+    "name": "Fairfax County (example)",
+    "closure_inch_threshold": 3,
+    "closure_temp_threshold_f": 20,
+    "bias_when_snow_overnight": 1,
+    "historical_closure_weight": 3,
+    "notes": "Example values. Update with local knowledge."
+  },
+
+  "10001": {
+    "name": "Manhattan (example)",
+    "closure_inch_threshold": 6,
+    "closure_temp_threshold_f": 15,
+    "bias_when_snow_overnight": 0,
+    "historical_closure_weight": 2,
+    "notes": "Big-city example — higher inch threshold."
+  }
+}
