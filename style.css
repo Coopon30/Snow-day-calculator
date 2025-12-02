@@ -1,65 +1,132 @@
-:root{
-  --bg:#f6f8fb;
-  --card:#ffffff;
-  --accent:#2b7cff;
-  --muted:#6b7280;
-  --success:#0f9d58;
-  --warning:#f59e0b;
-  --danger:#ef4444;
-  --shadow: 0 6px 18px rgba(15,23,42,0.08);
-  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+/* ===== GLOBAL STYLES ===== */
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    background: linear-gradient(160deg, #0b0f1a, #102038, #1c1f3e 70%);
+    color: #e8ecf3;
+    min-height: 100vh;
 }
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  background:var(--bg);
-  color:#0f172a;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
+
+/* Center everything */
+main {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
 }
-.container{
-  max-width:760px;
-  margin:36px auto;
-  padding:24px;
+
+/* Header */
+header {
+    text-align: center;
+    padding: 30px 15px;
 }
-h1{margin:0 0 8px;font-size:28px}
-.explain{color:var(--muted);margin:0 0 18px}
-label{display:block;margin:12px 0 6px;font-weight:600}
-input#zip{
-  width:100%;
-  padding:12px 14px;
-  border-radius:8px;
-  border:1px solid #e6e9ef;
-  font-size:16px;
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, #76a9ff, #a48bff);
+    -webkit-background-clip: text;
+    color: transparent;
 }
-.controls{display:flex;gap:10px;margin-top:12px}
-button{
-  background:var(--accent);
-  color:white;
-  border:0;
-  padding:10px 14px;
-  border-radius:8px;
-  cursor:pointer;
-  font-weight:600;
+header p {
+    color: #cbd5e1;
+    font-size: 1.1rem;
+    margin-top: 8px;
 }
-button#exampleBtn{background:#111827}
-.hidden{display:none}
-.card{
-  background:var(--card);
-  border-radius:12px;
-  padding:16px;
-  margin-top:18px;
-  box-shadow:var(--shadow);
+
+/* ===== CARD STYLES ===== */
+.card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    padding: 25px;
+    margin-top: 25px;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 0 20px rgba(0,0,0,0.35);
 }
-#verdict{margin:0 0 8px}
-.score-line{height:12px;border-radius:8px;background:#eef2ff;overflow:hidden;margin-bottom:10px}
-.score-fill{height:100%;border-radius:8px}
-.details h3{margin:12px 0 6px}
-.details ul{margin:0 0 10px 18px;color:var(--muted)}
-pre{background:#f3f4f6;padding:12px;border-radius:8px;color:#111827;overflow:auto}
-footer{margin-top:24px;color:var(--muted);font-size:13px}
-.badge{display:inline-block;padding:4px 8px;border-radius:999px;font-weight:600}
-.badge-good{background:rgba(15,157,88,0.12);color:var(--success)}
-.badge-maybe{background:rgba(245,158,11,0.12);color:var(--warning)}
-.badge-bad{background:rgba(239,68,68,0.12);color:var(--danger)}
+
+/* Input Card */
+.input-card input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 10px;
+    font-size: 1rem;
+    background: #1f2a44;
+    color: #fff;
+}
+.input-card button {
+    width: 100%;
+    margin-top: 12px;
+    padding: 12px;
+    font-size: 1.1rem;
+    background: linear-gradient(90deg, #3b82f6, #6366f1);
+    color: white;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.input-card button:hover {
+    opacity: 0.85;
+}
+
+/* Result card */
+.result-card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+}
+
+/* Alerts (NWS style) */
+.alert {
+    padding: 12px;
+    border-radius: 10px;
+    margin: 15px 0;
+    font-weight: 600;
+}
+.alert-warning {
+    background: rgba(255, 160, 0, 0.2);
+    border-left: 4px solid #fbbf24;
+}
+.alert-danger {
+    background: rgba(255, 40, 40, 0.2);
+    border-left: 4px solid #ef4444;
+}
+.alert-info {
+    background: rgba(70, 160, 255, 0.2);
+    border-left: 4px solid #3b82f6;
+}
+
+/* Prediction badge */
+.prediction-badge {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    margin: 15px 0;
+}
+.badge-likely {
+    background: rgba(0, 255, 120, 0.15);
+    border: 1px solid #22c55e;
+}
+.badge-possible {
+    background: rgba(255, 200, 60, 0.15);
+    border: 1px solid #facc15;
+}
+.badge-unlikely {
+    background: rgba(255, 80, 80, 0.15);
+    border: 1px solid #ef4444;
+}
+
+/* Hidden until prediction appears */
+.hidden {
+    display: none;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 60px;
+    padding: 20px;
+    color: #64748b;
+    font-size: 0.9rem;
+}
