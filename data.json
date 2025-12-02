@@ -1,0 +1,7 @@
+{
+    "22153": {
+        "avg_closure_at_4in": 0.8,
+        "avg_closure_at_2in": 0.5,
+        "closure_temp_threshold": 25
+    }
+}
