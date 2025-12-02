@@ -1,32 +1,48 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snow Day Predictor</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Snow Day Predictor</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <main class="container">
+    <h1>Snow Day Predictor</h1>
 
-    <header>
-        <h1>Snow Day Predictor</h1>
-        <p>Your local forecast, school trends, and prediction—all in one place.</p>
-    </header>
+    <p class="explain">Enter a U.S. ZIP code — this checks local trends + weather and predicts whether tomorrow will be a snow day.</p>
 
-    <main>
-        <section class="card input-card">
-            <h2>Check Your ZIP Code</h2>
-            <input id="zip" type="text" placeholder="Enter ZIP code">
-            <button onclick="predict()">Predict Snow Day</button>
-        </section>
+    <label for="zip">ZIP code</label>
+    <input id="zip" inputmode="numeric" maxlength="10" placeholder="e.g. 22153" />
 
-        <section id="result" class="card result-card hidden"></section>
-    </main>
+    <div class="controls">
+      <button id="predictBtn">Check Tomorrow</button>
+      <button id="exampleBtn">Try Example ZIP</button>
+    </div>
+
+    <div id="loading" class="hidden">Loading…</div>
+
+    <section id="result" class="card hidden">
+      <h2 id="verdict"></h2>
+      <div id="scoreLine" class="score-line"></div>
+
+      <div class="details">
+        <h3>Why</h3>
+        <ul id="reasonList"></ul>
+
+        <h3>Weather (tomorrow)</h3>
+        <ul id="weatherList"></ul>
+
+        <h3>Local trend profile</h3>
+        <pre id="trendBlock"></pre>
+      </div>
+    </section>
 
     <footer>
-        <p>Powered by Open-Meteo & National Weather Service</p>
+      <p>Starter project • No API keys needed • Edit <code>school_trends.json</code> to add local rules.</p>
     </footer>
+  </main>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
